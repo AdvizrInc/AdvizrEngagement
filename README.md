@@ -20,7 +20,7 @@ Just paste the following code anywhere into your website (make sure to replace `
 
 ## Demo
 
-Take a look at [demo](https://s3.amazonaws.com/advizr-cdn-prod/engagement/demo.html)
+Take a look at [demo](https://resources.advizr.com/engagement/demo.html)
 
 ## Help
 
