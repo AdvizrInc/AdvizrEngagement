@@ -6,12 +6,30 @@
     <title>Advizr Engagement Workflow</title>
   </head>
   <body>
-    <div
-      id="AdvizrEngagementWorkflow"
-      data-cta1url="https://www.advizr.com/meetings/jacqueline-farmer/advizr-workplace-overview"
-      data-cta2url="https://www.advizr.com/advizr-workplace"
-    ></div>
+    <div id="AdvizrEngagementWorkflow"></div>
 
     <script src="https://resources.advizr.com/engagement/bootstrap.js"></script>
+
+    <script>
+      window.addEventListener(
+        'message',
+        event => {
+          if (!/\.advizr\.com$/.test(event.origin)) {
+            return;
+          }
+
+          try {
+            const message = JSON.parse(event.data);
+
+            if (message.type === 'FINANCIAL_RESULTS') {
+              console.log('Results: ', message.payload);
+            }
+          } catch (err) {
+            console.error(err);
+          }
+        },
+        false
+      );
+    </script>
   </body>
 </html>
